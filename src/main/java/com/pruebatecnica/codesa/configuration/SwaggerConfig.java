@@ -26,7 +26,7 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(metadata())
-                .tags(new Tag("Receipt Rest API", "Defines endpoints that do CRUD operations about Receipts."));
+                .tags(new Tag("User Rest API", "Defines endpoints that do CRUD operations about User."));
     }
 
     private ApiInfo metadata() {
