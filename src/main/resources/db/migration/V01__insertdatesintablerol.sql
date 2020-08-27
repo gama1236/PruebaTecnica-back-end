@@ -1,0 +1,3 @@
+INSERT INTO rol(r_nombre)  VALUES ('ADMINISTRADOR');
+INSERT INTO rol(r_nombre)  VALUES ('AUDITOR');
+INSERT INTO rol(r_nombre)  VALUES ('AUXILIAR');
