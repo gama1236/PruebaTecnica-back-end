@@ -24,7 +24,6 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table(name = "usuario")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userId")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,5 +1,8 @@
 package com.pruebatecnica.codesa.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +38,7 @@ public class Rol {
     @ApiModelProperty(notes = "nombre del rol", required = true)
     private String nameRol;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "rol", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List <User> userList;
 

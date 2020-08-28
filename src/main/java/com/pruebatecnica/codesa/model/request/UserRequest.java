@@ -1,6 +1,5 @@
 package com.pruebatecnica.codesa.model.request;
 
-import com.pruebatecnica.codesa.model.Rol;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,5 +13,5 @@ public class UserRequest {
     private Long userId;
     private String userName;
     private Boolean userState;
-    private Rol rol;
+    private RolRequest rol;
 }

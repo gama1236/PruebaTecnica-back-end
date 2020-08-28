@@ -51,4 +51,9 @@ public class UserService implements IUserService {
         }
         userRepository.deleteById(id);
     }
+
+    @Override
+    public List<User> findByUserNameLike(String name) {
+        return userRepository.findByUserNameContaining(name);
+    }
 }

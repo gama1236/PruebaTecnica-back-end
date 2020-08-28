@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,6 +27,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 @Api(tags = "User Rest API")
+@CrossOrigin(value = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class UserController {
 
     private static final ModelMapper modelMapper = new ModelMapper();
@@ -82,6 +85,13 @@ public class UserController {
             response =  SimpleResponse.builder().code(400).message(e.getMessage()).value(null).build();
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/get/by/{name}")
+    public ResponseEntity<SimpleResponse> getByName(@PathVariable String name){
+        List<User> users =  userService.findByUserNameLike(name);
+        SimpleResponse simpleResponse = SimpleResponse.builder().code(200).message("Exito obteniendo los datos").value(users).build();
+        return new ResponseEntity<>(simpleResponse, HttpStatus.OK);
     }
 
 }

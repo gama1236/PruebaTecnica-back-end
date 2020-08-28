@@ -31,8 +31,8 @@ public class SwaggerConfig {
 
     private ApiInfo metadata() {
         return new ApiInfoBuilder()
-                .title("Recibos API")
-                .description("Funcionalidades de recibos de pago de certificados")
+                .title("User API")
+                .description("Funcionalidades CRUD de usuario")
                 .version("1.0-SNAPSHOT")
                 .termsOfServiceUrl("https://www.linkedin.com/in/stiven-castro-arias-004263162/").license("free")
                 .contact(new Contact("Stiven CAstro", "hhttps://www.linkedin.com/in/stiven-castro-arias-004263162/", "stivencastroarias2@gmail.com"))

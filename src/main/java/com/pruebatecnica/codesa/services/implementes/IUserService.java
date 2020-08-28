@@ -14,5 +14,6 @@ public interface IUserService {
 
     void deleteUser(Long id);
 
+    List<User> findByUserNameLike(String name);
 
 }
